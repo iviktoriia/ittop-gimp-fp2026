@@ -65,7 +65,7 @@ main {
 
 .card img {
   width: 100%;
-  background: #000;
+  background: rgba(0,255,204,0.4);
   margin-bottom: 10px;
 }
 
@@ -91,4 +91,135 @@ footer {
   padding: 20px;
   font-size: 9px;
   color: #666;
+}
+
+.theme-switch {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 10px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.switch-label {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 34px;
+  background: #333;
+  border-radius: 34px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,255,204,0.5);
+  overflow: hidden;
+}
+
+.sun, .moon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.sun {
+  left: 8px;
+  opacity: 0;
+}
+
+.moon {
+  right: 8px;
+  opacity: 1;
+}
+
+.toggle {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 30px;
+  height: 30px;
+  background: #00ffcc;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #00ffcc;
+}
+
+#theme-toggle-checkbox:checked + .switch-label {
+  background: #ffcc00;
+}
+
+#theme-toggle-checkbox:checked + .switch-label .sun {
+  opacity: 1;
+}
+
+#theme-toggle-checkbox:checked + .switch-label .moon {
+  opacity: 0;
+}
+
+#theme-toggle-checkbox:checked + .switch-label .toggle {
+  left: 38px;
+  background: #ffffff;
+  box-shadow: 0 0 15px #ffffff;
+}
+
+body.light-theme {
+  background: #f0f0f0;
+  color: #222;
+}
+
+body.light-theme header {
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+body.light-theme header p {
+  color: #555;
+}
+
+body.light-theme .card {
+  background: #ffffff;
+  border: 2px solid #ff0055;
+  box-shadow: 0 0 15px rgba(255,0,85,0.3);
+}
+
+body.light-theme .card img {
+  background: #ffffff;  /* белый фон */
+
+}
+
+body.light-theme .card .type {
+  color: #00cc99;
+}
+
+body.light-theme .elements button {
+  background: #ffffff;
+  color: #ff0055;
+  border: 2px solid #ff0055;
+}
+
+body.light-theme .elements button:hover {
+  background: #ff0055;
+  color: #ffffff;
+}
+
+body.light-theme nav button {
+  background: #ff0055;
+  color: #ffffff;
+  box-shadow: 0 0 10px #ff0055;
+}
+
+body.light-theme nav button:hover {
+  background: #00ffcc;
+  color: #000;
+  box-shadow: 0 0 15px #00ffcc;
+}
+
+body.light-theme .hint {
+  color: #666;
+}
+
+body.light-theme footer {
+  color: #888;
 }

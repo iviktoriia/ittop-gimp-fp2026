@@ -460,3 +460,22 @@ function showElements(type) {
       gallery.appendChild(card);
     });
 }
+
+const themeCheckbox = document.getElementById('theme-toggle-checkbox');
+const body = document.body;
+
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light') {
+  body.classList.add('light-theme');
+  themeCheckbox.checked = true;
+}
+
+themeCheckbox.addEventListener('change', () => {
+  if (themeCheckbox.checked) {
+    body.classList.add('light-theme');
+    localStorage.setItem('theme', 'light');
+  } else {
+    body.classList.remove('light-theme');
+    localStorage.setItem('theme', 'dark');
+  }
+});
